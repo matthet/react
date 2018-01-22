@@ -6,6 +6,11 @@ import { TodoList } from '../components/TodoList';
 
 // Todo Id
 window.id = 0;
+
+const bodyStyle = {
+  marginLeft: 25,
+}
+
 class TodoApp extends React.Component{
   constructor(props){
     // Pass props to parent class
@@ -37,7 +42,7 @@ class TodoApp extends React.Component{
   render(){
     // Render JSX
     return (
-      <div>
+      <div style={bodyStyle}>
         <Title />
         <TodoForm addTodo={this.addTodo.bind(this)}/>
         <TodoList 
