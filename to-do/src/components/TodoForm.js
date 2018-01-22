@@ -1,20 +1,19 @@
 import React from 'react';
 
 export const TodoForm = ({addTodo}) => {
-  // Input tracker
+  // Input Tracker
   let input;
-
+  // Return JSX
   return (
-    <div>
-      <input ref={node => {
-        input = node;
-      }} />
-      <button onClick={() => {
+    <form onSubmit={(e) => {
+        e.preventDefault();
         addTodo(input.value);
         input.value = '';
       }}>
-        +
-      </button>
-    </div>
+      <input className="form-control col-md-12" ref={node => {
+        input = node;
+      }} />
+      <br />
+    </form>
   );
 };
