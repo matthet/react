@@ -1,4 +1,6 @@
 import React from 'react';
+import { styles } from '../styles/styles';
+import leafImage from '../images/leaf.png'
 
 export const TodoForm = ({addTodo}) => {
   // Input Tracker
@@ -10,10 +12,11 @@ export const TodoForm = ({addTodo}) => {
         addTodo(input.value);
         input.value = '';
       }}>
-      <input className="form-control col-md-12" ref={node => {
+      <input style={styles.form} ref={node => {
         input = node;
       }} />
       <br />
+      <img src={leafImage} style={styles.image}/>
     </form>
   );
 };

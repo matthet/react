@@ -1,8 +1,14 @@
 import React from 'react';
+import { styles } from '../styles/styles';
 
-export const Todo = ({todo, remove}) => {
-  // Each Todo
-  return (<li style={{cursor:'pointer'}} onClick={() => 
-      {remove(todo.id)}}>
-      {todo.text}</li>);
+export const Todo = ({todo, index, remove}) => {
+  // Each Todo item
+  return (
+  	<div style={styles.todoItem}>
+	  	<span>{index}. </span>
+	  	<span style={styles.li} onClick={() => {remove(todo.id)}}>
+	      {todo.text}
+	  	</span>
+  	</div>
+  );
 }

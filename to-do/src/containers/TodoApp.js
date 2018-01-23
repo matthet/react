@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Title } from '../components/Title';
 import { TodoForm } from '../components/TodoForm';
 import { TodoList } from '../components/TodoList';
+import { styles } from '../styles/styles';
 
 // Todo Id
 window.id = 0;
@@ -22,7 +23,7 @@ class TodoApp extends React.Component{
   }
 
   componentDidMount(){
-    // Make HTTP reques with Axios
+    // Make HTTP request with Axios
     axios.get(this.apiUrl)
       .then((res) => {
         // Set state with result
@@ -55,8 +56,8 @@ class TodoApp extends React.Component{
  
   render(){
     return (
-      <div style={{marginLeft:'25px'}}>
-        <Title todoCount={this.state.data.length}/>
+      <div style={styles.container}>
+        <Title style={styles.title} todoCount={this.state.data.length}/>
         <TodoForm addTodo={this.addTodo}/>
         <TodoList 
           todos={this.state.data} 

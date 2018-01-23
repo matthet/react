@@ -4,7 +4,7 @@ export const Title = ({todoCount}) => {
   return (
     <div>
        <div>
-          <h1>to-do ({todoCount})</h1>
+          <h1>THINGS TO DO ({todoCount})</h1>
        </div>
     </div>
   );
